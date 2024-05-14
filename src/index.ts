@@ -1,6 +1,10 @@
+import fetch from 'node-fetch'
+
 async function reportRequest (url: string, reportObj: any) {
-    if (window?.navigator?.sendBeacon) {
-        return window.navigator.sendBeacon(`${window.location.origin}/r/c/a?name=yupoo_internal`, JSON.stringify(reportObj));
+    if (typeof window === 'object') {
+        if (window?.navigator?.sendBeacon) {
+            return window.navigator.sendBeacon(`${window.location.origin}/r/c/a?name=yupoo_internal`, JSON.stringify(reportObj));
+        }
     }
     return fetch(url, {
         method: "POST",

@@ -1,8 +1,8 @@
 {
   "name": "yupoo-reporter",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsup src/index.ts",
     "start": "npm run build -- --watch",
@@ -11,8 +11,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "tsup": "^8.0.2",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.6"
   }
 }
